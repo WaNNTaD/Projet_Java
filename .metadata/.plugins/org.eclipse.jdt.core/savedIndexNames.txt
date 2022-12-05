@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+/Users/Julien/Desktop/Projet_Trica/.metadata/.plugins/org.eclipse.jdt.core
+2382286973.index
+3430356013.index
+1865496315.index
+1865797976.index
