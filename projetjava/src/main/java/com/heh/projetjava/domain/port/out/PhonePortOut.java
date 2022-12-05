@@ -15,5 +15,5 @@ public interface PhonePortOut {
 
     public void deletePhone(Long id);
 
-    public Phone selectPhone(Long id);
+    public Phone selectId(Long id);
 }
