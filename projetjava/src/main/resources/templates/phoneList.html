@@ -11,13 +11,13 @@
 <table>
     <tr>
         <th>Nom</th>
-        <th>Prenom</th>
-        <th>Date</th>
+        <th>Modele</th>
+        <th>Capacite</th>
     </tr>
-    <tr th:each="student : ${students}">
-        <td th:text="${student.getNom}"></td>
-        <td th:text="${student.getPrenom}"></td>
-        <td th:text="${student.getAge}"></td>
+    <tr th:each="phone : ${phones}">
+        <td th:text="${phone.getMarque}"></td>
+        <td th:text="${phone.getModele}"></td>
+        <td th:text="${phone.getCapacite}"></td>
     </tr>
 </table>
 
