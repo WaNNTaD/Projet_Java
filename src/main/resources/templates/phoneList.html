@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Liste des téléphones</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center my-3">Liste des téléphones</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Marque</th>
+            <th>Modèle</th>
+            <th>Capacité</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="phone : ${phones}">
+            <td th:text="${phone.id}"></td>
+            <td th:text="${phone.marque}"></td>
+            <td th:text="${phone.modele}"></td>
+            <td th:text="${phone.capacite}"></td>
+            <td>
+                <form th:action="@{/updatePhone}" th:method="post">
+                    <input type="hidden" th:name="id" th:value="${phone.id}">
+                    <input type="submit" class="btn btn-primary" value="Modifier">
+                </form>
+                <form th:action="@{/deletePhoneForm}" th:method="post" class="d-inline">
+                    <input type="hidden" th:name="id" th:value="${phone.id}">
+                    <input type="submit" class="btn btn-danger" value="Supprimer">
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h2 class="text-center my-4">Ajouter un téléphone</h2>
+    <form th:action="@{/addPhoneForm}" th:method="post" class="form-group">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>ID :</label>
+                <input type="text" th:name="id" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Marque :</label>
+                <input type="text" th:name="marque" class="form-control">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Modèle :</label>
+                <input type="text" th:name="modele" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Capacité :</label>
+                <input type="text" th:name="capacite" class="form-control">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
+</body>
+</html>

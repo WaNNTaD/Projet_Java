@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modification de téléphone</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center my-3">Modification de téléphone</h1>
+  <form th:action="@{/updatePhoneForm}" th:method="post" class="form-group">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>ID :</label>
+        <input type="text" th:name="id" th:value="${phone.id}" class="form-control" disabled>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Marque :</label>
+        <input type="text" th:name="marque" th:value="${phone.marque}" class="form-control">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Modèle :</label>
+        <input type="text" th:name="modele" th:value="${phone.modele}" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Capacité :</label>
+        <input type="text" th:name="capacite" th:value="${phone.capacite}" class="form-control">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Modifier</button>
+  </form>
+</div>
+</body>
+</html>
